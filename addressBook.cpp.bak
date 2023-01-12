@@ -1,0 +1,270 @@
+//
+// Created by Administrator on 2023/1/6.
+//
+#include<iostream>
+#include <string>
+
+using namespace std;
+struct Person {
+  string name;
+  int sex = 0;
+  int age = 0;
+  string phone;
+  string address;
+};
+
+#define MAX 1000 //最大人数
+
+struct AddressBook {
+  struct Person personArray[MAX];
+  int size = 0;
+};
+
+void showMenu() {
+  cout << "***************************" << endl;
+  cout << "*****  1、添加联系人  *****" << endl;
+  cout << "*****  2、显示联系人  *****" << endl;
+  cout << "*****  3、删除联系人  *****" << endl;
+  cout << "*****  4、查找联系人  *****" << endl;
+  cout << "*****  5、修改联系人  *****" << endl;
+  cout << "*****  6、清空联系人  *****" << endl;
+  cout << "*****  0、退出通讯录  *****" << endl;
+  cout << "***************************" << endl;
+}
+
+void addPerson(AddressBook *books) {
+  if (books->size >= MAX) {
+    cout << "通讯录已达上限，请先删除" << endl;
+  }
+  string name;
+  int sex = 0;
+  int age = 0;
+  string phone;
+  string address;
+  Person addingPerson;
+  cout << "请输入姓名：" << endl;
+  cin >> name;
+  addingPerson.name = name;
+  cout << "请选择性别：" << endl;
+  cout << "1 -- 男" << endl;
+  cout << "2 -- 女" << endl;
+
+  while (true) {
+    cin >> sex;
+    if (sex == 1 || sex == 2) {
+      addingPerson.sex = sex;
+      break;
+    }
+    cout << "输入有误，请重新输入" << endl;
+  }
+
+  cout << "请输入年龄：" << endl;
+  cin >> age;
+  addingPerson.age = age;
+
+  cout << "请输入联系电话：" << endl;
+  cin >> phone;
+  addingPerson.phone = phone;
+
+  cout << "请输入家庭住址：" << endl;
+  cin >> address;
+  addingPerson.address = address;
+
+  books->personArray[books->size] = addingPerson;
+  books->size++;
+  system("pause");
+  system("cls");
+}
+
+void showPerson(AddressBook * books)
+{
+  if (books->size == 0)
+  {
+    cout << "当前记录为空" << endl;
+  }
+  else
+  {
+    for (int i = 0; i < books->size; i++)
+    {
+      cout << "姓名：" << books->personArray[i].name << "\t";
+      cout << "性别：" << (books->personArray[i].sex == 1 ? "男" : "女") << "\t";
+      cout << "年龄：" << books->personArray[i].age << "\t";
+      cout << "电话：" << books->personArray[i].phone << "\t";
+      cout << "住址：" << books->personArray[i].address << endl;
+    }
+  }
+
+  system("pause");
+  system("cls");
+}
+
+//判断是否存在查询的人员，存在返回在数组中索引位置，不存在返回-1
+int isExist(AddressBook *books, string name)
+{
+  for (int i = 0; i < books->size; i++)
+  {
+    if (books->personArray[i].name == name)
+    {
+      return i;
+    }
+  }
+  return -1;
+}
+
+void deletePerson(AddressBook * books)
+{
+  cout << "请输入您要删除的联系人" << endl;
+  string name;
+  cin >> name;
+
+  int ret = isExist(books, name);
+  if (ret != -1)
+  {
+    for (int i = ret; i < books->size; i++)
+    {
+      books->personArray[i] = books->personArray[i + 1];
+    }
+    books->size--;
+    cout << "删除成功" << endl;
+  }
+  else
+  {
+    cout << "查无此人" << endl;
+  }
+
+  system("pause");
+  system("cls");
+}
+
+void findPerson(AddressBook * books)
+{
+  cout << "请输入您要查找的联系人" << endl;
+  string name;
+  cin >> name;
+
+  int ret = isExist(books, name);
+  if (ret != -1)
+  {
+    cout << "姓名：" << books->personArray[ret].name << "\t";
+    cout << "性别：" << books->personArray[ret].sex << "\t";
+    cout << "年龄：" << books->personArray[ret].age << "\t";
+    cout << "电话：" << books->personArray[ret].phone << "\t";
+    cout << "住址：" << books->personArray[ret].address << endl;
+  }
+  else
+  {
+    cout << "查无此人" << endl;
+  }
+
+  system("pause");
+  system("cls");
+
+}
+
+void modifyPerson(AddressBook * books)
+{
+  cout << "请输入您要修改的联系人" << endl;
+  string name;
+  cin >> name;
+
+  int ret = isExist(books, name);
+  if (ret != -1)
+  {
+    //姓名
+    string name;
+    cout << "请输入姓名：" << endl;
+    cin >> name;
+    books->personArray[ret].name = name;
+
+    cout << "请输入性别：" << endl;
+    cout << "1 -- 男" << endl;
+    cout << "2 -- 女" << endl;
+
+    //性别
+    int sex = 0;
+    while (true)
+    {
+      cin >> sex;
+      if (sex == 1 || sex == 2)
+      {
+        books->personArray[ret].sex = sex;
+        break;
+      }
+      cout << "输入有误，请重新输入";
+    }
+
+    //年龄
+    cout << "请输入年龄：" << endl;
+    int age = 0;
+    cin >> age;
+    books->personArray[ret].age = age;
+
+    //联系电话
+    cout << "请输入联系电话：" << endl;
+    string phone = "";
+    cin >> phone;
+    books->personArray[ret].phone = phone;
+
+    //家庭住址
+    cout << "请输入家庭住址：" << endl;
+    string address;
+    cin >> address;
+    books->personArray[ret].address = address;
+
+    cout << "修改成功" << endl;
+  }
+  else
+  {
+    cout << "查无此人" << endl;
+  }
+
+  system("pause");
+  system("cls");
+
+}
+//6、清空所有联系人
+void cleanPerson(AddressBook * books)
+{
+  books->size = 0;
+  cout << "通讯录已清空" << endl;
+  system("pause");
+  system("cls");
+}
+
+int main() {
+  int select = 0;
+  AddressBook addressBook;
+  addressBook.size = 0;
+
+  while (true) {
+    showMenu();
+    cout << "请选择序号" << endl;
+    cin >> select;
+    switch (select) {
+      case 0:
+        cout << "欢迎下次使用" << endl;
+        return 0;
+        break;
+      case 1:
+        addPerson(&addressBook);
+      case 2:
+        showPerson(&addressBook);
+      case 3:
+        deletePerson(&addressBook);
+      case 4:  //查找联系人
+        findPerson(&addressBook);
+        break;
+      case 5:  //修改联系人
+        modifyPerson(&addressBook);
+        break;
+      case 6:  //清空联系人
+        cleanPerson(&addressBook);
+        break;
+      default:
+        break;
+    }
+  }
+
+  system("pause");
+  return 0;
+}

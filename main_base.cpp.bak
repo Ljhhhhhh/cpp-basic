@@ -1,0 +1,120 @@
+#include <iostream>
+#include <cmath>
+
+void simon(int);
+
+int GetASCII(char x) //获取字符的ascll值
+{
+  return int(x);
+}
+
+char GetCHR(int x)//获取字符
+{
+  return char(x);
+}
+
+
+using std::cout;
+using std::endl;
+using std::cin;
+using std::string;
+
+//冒泡排序函数
+void bubbleSort(int *arr, int len)  //int * arr 也可以写为int arr[]
+{
+  for (int i = 0; i < len - 1; i++) {
+    for (int j = 0; j < len - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        int temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+}
+
+//打印数组函数
+void printArray(int arr[], int len) {
+  for (int i = 0; i < len; i++) {
+    cout << arr[i] << "<";
+  }
+  cout << endl;
+}
+
+struct hero {
+  string name;
+  int age;
+  string sex;
+};
+
+//冒泡排序
+void bubbleSort(hero arr[], int len) {
+  for (int i = 0; i < len - 1; i++) {
+    for (int j = 0; j < len - 1 - i; j++) {
+      if (arr[j].age > arr[j + 1].age) {
+        hero temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+}
+
+//打印数组
+void printHeros(hero arr[], int len) {
+  for (int i = 0; i < len; i++) {
+    cout << "姓名： " << arr[i].name << " 性别： " << arr[i].sex << " 年龄： " << arr[i].age << endl;
+  }
+}
+
+int main() {
+  int a = 10;
+  int *p;
+
+  p = &a;
+  cout << &a << endl;
+  cout << p << endl;
+  cout << "*p = " << *p << endl;
+  cout << "*a = " << *&a << endl;
+
+  cout << sizeof(p) << endl;
+
+  int arr[10] = {4, 3, 6, 9, 1, 2, 10, 8, 7, 5};
+  int len = sizeof(arr) / sizeof(int);
+
+  bubbleSort(arr, len);
+
+  printArray(arr, len);
+
+  //结构体定义
+  struct student {
+    //成员列表
+    string name;  //姓名
+    int age;      //年龄
+    int score;    //分数
+  };
+
+  struct student stu = {"张三", 18, 100,};
+
+  struct student *st = &stu;
+
+  st->score = 80; //指针通过 -> 操作符可以访问成员
+
+  cout << "姓名：" << st->name << " 年龄：" << st->age << " 分数：" << st->score << endl;
+
+  struct hero heroArr[5] =
+    {
+      {"刘备", 23, "男"},
+      {"关羽", 22, "男"},
+      {"张飞", 20, "男"},
+      {"赵云", 21, "男"},
+      {"貂蝉", 19, "女"},
+    };
+
+  int heroLen = sizeof(heroArr) / sizeof(hero); //获取数组元素个数
+
+  bubbleSort(heroArr, heroLen); //排序
+
+  printHeros(heroArr, heroLen); //打印
+  return 0;
+}
