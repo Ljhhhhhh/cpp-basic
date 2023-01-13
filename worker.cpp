@@ -4,5 +4,5 @@
 #include "worker.h"
 
 void Worker::updateDept(int deptId) {
-  this->dept_id = deptId;
+    this->dept_id = deptId;
 }

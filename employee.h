@@ -3,17 +3,20 @@
 //
 
 #pragma once
+
 #include<iostream>
+
 using namespace std;
+
 #include "worker.h"
 
 class Employee : public Worker {
 public:
-  Employee(int id, string name, int deptId);
+    Employee(int id, string& name, int deptId);
 
-  virtual void showInfo();
+    virtual void showInfo();
 
-  virtual string getDeptName();
+    virtual string getDeptName();
 
-  void updateDept(int deptId);
+    void updateDept(int deptId);
 };

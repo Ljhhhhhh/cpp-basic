@@ -49,38 +49,8 @@ cmake_ninja_workdir = D$:/demo/cpp_learn/cmake-build-debug/
 
 build cmake_object_order_depends_target_cpp_learn: phony || CMakeFiles/cpp_learn.dir
 
-build CMakeFiles/cpp_learn.dir/main.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/main.cpp || cmake_object_order_depends_target_cpp_learn
-  DEP_FILE = CMakeFiles\cpp_learn.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  OBJECT_DIR = CMakeFiles\cpp_learn.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
-
-build CMakeFiles/cpp_learn.dir/workerManger.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/workerManger.cpp || cmake_object_order_depends_target_cpp_learn
-  DEP_FILE = CMakeFiles\cpp_learn.dir\workerManger.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  OBJECT_DIR = CMakeFiles\cpp_learn.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
-
-build CMakeFiles/cpp_learn.dir/employee.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/employee.cpp || cmake_object_order_depends_target_cpp_learn
-  DEP_FILE = CMakeFiles\cpp_learn.dir\employee.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  OBJECT_DIR = CMakeFiles\cpp_learn.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
-
-build CMakeFiles/cpp_learn.dir/manager.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/manager.cpp || cmake_object_order_depends_target_cpp_learn
-  DEP_FILE = CMakeFiles\cpp_learn.dir\manager.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  OBJECT_DIR = CMakeFiles\cpp_learn.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
-
-build CMakeFiles/cpp_learn.dir/boss.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/boss.cpp || cmake_object_order_depends_target_cpp_learn
-  DEP_FILE = CMakeFiles\cpp_learn.dir\boss.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  OBJECT_DIR = CMakeFiles\cpp_learn.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
-
-build CMakeFiles/cpp_learn.dir/worker.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/worker.cpp || cmake_object_order_depends_target_cpp_learn
-  DEP_FILE = CMakeFiles\cpp_learn.dir\worker.cpp.obj.d
+build CMakeFiles/cpp_learn.dir/staffGroupByMap.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/staffGroupByMap.cpp || cmake_object_order_depends_target_cpp_learn
+  DEP_FILE = CMakeFiles\cpp_learn.dir\staffGroupByMap.cpp.obj.d
   FLAGS = -g -std=gnu++11
   OBJECT_DIR = CMakeFiles\cpp_learn.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
@@ -93,7 +63,7 @@ build CMakeFiles/cpp_learn.dir/worker.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:
 #############################################
 # Link the executable cpp_learn.exe
 
-build cpp_learn.exe: CXX_EXECUTABLE_LINKER__cpp_learn_Debug CMakeFiles/cpp_learn.dir/main.cpp.obj CMakeFiles/cpp_learn.dir/workerManger.cpp.obj CMakeFiles/cpp_learn.dir/employee.cpp.obj CMakeFiles/cpp_learn.dir/manager.cpp.obj CMakeFiles/cpp_learn.dir/boss.cpp.obj CMakeFiles/cpp_learn.dir/worker.cpp.obj
+build cpp_learn.exe: CXX_EXECUTABLE_LINKER__cpp_learn_Debug CMakeFiles/cpp_learn.dir/staffGroupByMap.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cpp_learn.dir
