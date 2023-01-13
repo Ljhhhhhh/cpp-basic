@@ -1,7 +1,7 @@
 //
 // Created by Administrator on 2023/1/11.
 //
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
