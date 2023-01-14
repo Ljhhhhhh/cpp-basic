@@ -1,3 +1,3 @@
-D:/CLionProjects/cpp-basic/cmake-build-debug/CMakeFiles/cpp_learn.dir
-D:/CLionProjects/cpp-basic/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/CLionProjects/cpp-basic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/pipilu/Documents/learn/cpp-basic/cmake-build-debug/CMakeFiles/cpp_learn.dir
+/Users/pipilu/Documents/learn/cpp-basic/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/pipilu/Documents/learn/cpp-basic/cmake-build-debug/CMakeFiles/rebuild_cache.dir

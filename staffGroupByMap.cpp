@@ -2,8 +2,9 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include<algorithm>
 
-// using namespace std;
+using namespace std;
 /*
 - 公司今天招聘了10个员工（ABCDEFGHIJ），10名员工进入公司之后，需要指派员工在那个部门工作
 - 员工信息有: 姓名  工资组成；部门分为：策划、美术、研发
@@ -35,6 +36,7 @@ void createWorker(std::vector<Worker> &workers) {
 
 void setGroup(std::vector<Worker> &workers, std::multimap<int, Worker> &m) {
     for (std::vector<Worker>::iterator w = workers.begin(); w != workers.end(); w++) {
+
         int deptId = rand() % 3;
         m.insert(std::make_pair(deptId, *w));
     }
@@ -69,7 +71,7 @@ void showWorkerByGroup(std::multimap<int, Worker> &m) {
     std::cout << "----------------------" << std::endl;
     std::cout << "研发部门： " << std::endl;
     pos = m.find(YANFA);
-    count = m.count(YANFA); // 统计具体人数
+    count = m.count(YANFA); // 统计具体人数Ï
     index = 0;
     for (; pos != m.end() && index < count; pos++, index++) {
         std::cout << "姓名： " << pos->second.name << " 工资： " << pos->second.salary << std::endl;
@@ -77,8 +79,40 @@ void showWorkerByGroup(std::multimap<int, Worker> &m) {
 
 }
 
+class MyPrint {
+public:
+    void operator()(int val) {
+        std::cout << val << " ";
+    }
+};
+
+class TransForm {
+public:
+    int operator()(int val) {
+        return val;
+    }
+
+};
+
+void test01() {
+    vector<int> v;
+    for (int i = 0; i < 10; i++) {
+        v.push_back(i);
+    }
+
+    vector<int> vTarget; //目标容器
+
+    vTarget.resize(v.size()); // 目标容器需要提前开辟空间
+
+    transform(v.begin(), v.end(), vTarget.begin(), TransForm());
+
+    for_each(vTarget.begin(), vTarget.end(), MyPrint());
+}
+
 
 int main() {
+
+    test01();
     srand((unsigned int) time(nullptr));
 
     //1、创建员工
@@ -93,9 +127,11 @@ int main() {
     showWorkerByGroup(mWorker);
 
 
-    for (std::vector<Worker>::iterator it = workers.begin(); it != workers.end(); it++) {
-        std::cout << "姓名： " << it->name << " 工资： " << it->salary << std::endl;
-    }
+
+
+//    for (std::vector<Worker>::iterator it = workers.begin(); it != workers.end(); it++) {
+//        std::cout << "姓名： " << it->name << " 工资： " << it->salary << std::endl;
+//    }
 
 //    简化写法
 //    for (auto & worker : workers) {
