@@ -11,42 +11,45 @@
 #include "employee.h"
 #include "manager.h"
 #include "boss.h"
+
 #define  FILENAME "empFile.txt"
 using namespace std;
 
 class WorkerManager {
 public:
-  int emp_num;
-  Worker **emp_arr;
-  bool fileIsEmpty;
+    int emp_num;
+    Worker **emp_arr;
+    bool fileIsEmpty;
 
-  WorkerManager();
-  ~WorkerManager();
+    WorkerManager();
 
-  static void showMenu();
+    ~WorkerManager();
 
-  static void exitSystem();
+    static void showMenu();
 
-  void addEmp();
+    static void exitSystem();
 
-  void save() const;
+    void addEmp();
 
-  static int getEmpCount();
+    void save() const;
 
-  void initializeEmp() const;
+    static int getEmpCount();
 
-  void showEmpInfo() const;
+    void initializeEmp() const;
 
-  int isExist(int id) const;
-  vector<int> isExist(const string& name) const;
+    void showEmpInfo() const;
 
-  void deleteEmp();
+    int isExist(int id) const;
 
-  void updateEmp() const;
+    vector<int> isExist(const string &name) const;
 
-  void findEmp() const;
+    void deleteEmp();
 
-  void sortEmp() const;
+    void updateEmp() const;
 
-  void clearFile();
+    void findEmp() const;
+
+    void sortEmp() const;
+
+    void clearFile();
 };
