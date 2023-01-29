@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 11)
 # main.cpp
 # myArrayUse.cpp dynamicArray.cpp
 #workerManger.cpp workerManger.h worker.h employee.cpp employee.h manager.cpp manager.h boss.cpp boss.h worker.cpp myArray.hpp
-add_executable(cpp_learn staffGroupByMap.cpp)
+# staffGroupByMap.cpp
+add_executable(cpp_learn main.cpp speechManager.cpp speechManager.h speaker.cpp speaker.h)

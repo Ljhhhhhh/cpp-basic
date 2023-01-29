@@ -49,8 +49,20 @@ cmake_ninja_workdir = D$:/demo/cpp_learn/cmake-build-debug/
 
 build cmake_object_order_depends_target_cpp_learn: phony || CMakeFiles/cpp_learn.dir
 
-build CMakeFiles/cpp_learn.dir/staffGroupByMap.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/staffGroupByMap.cpp || cmake_object_order_depends_target_cpp_learn
-  DEP_FILE = CMakeFiles\cpp_learn.dir\staffGroupByMap.cpp.obj.d
+build CMakeFiles/cpp_learn.dir/main.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/main.cpp || cmake_object_order_depends_target_cpp_learn
+  DEP_FILE = CMakeFiles\cpp_learn.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  OBJECT_DIR = CMakeFiles\cpp_learn.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
+
+build CMakeFiles/cpp_learn.dir/speechManager.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/speechManager.cpp || cmake_object_order_depends_target_cpp_learn
+  DEP_FILE = CMakeFiles\cpp_learn.dir\speechManager.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  OBJECT_DIR = CMakeFiles\cpp_learn.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
+
+build CMakeFiles/cpp_learn.dir/speaker.cpp.obj: CXX_COMPILER__cpp_learn_Debug D$:/demo/cpp_learn/speaker.cpp || cmake_object_order_depends_target_cpp_learn
+  DEP_FILE = CMakeFiles\cpp_learn.dir\speaker.cpp.obj.d
   FLAGS = -g -std=gnu++11
   OBJECT_DIR = CMakeFiles\cpp_learn.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp_learn.dir
@@ -63,7 +75,7 @@ build CMakeFiles/cpp_learn.dir/staffGroupByMap.cpp.obj: CXX_COMPILER__cpp_learn_
 #############################################
 # Link the executable cpp_learn.exe
 
-build cpp_learn.exe: CXX_EXECUTABLE_LINKER__cpp_learn_Debug CMakeFiles/cpp_learn.dir/staffGroupByMap.cpp.obj
+build cpp_learn.exe: CXX_EXECUTABLE_LINKER__cpp_learn_Debug CMakeFiles/cpp_learn.dir/main.cpp.obj CMakeFiles/cpp_learn.dir/speechManager.cpp.obj CMakeFiles/cpp_learn.dir/speaker.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cpp_learn.dir

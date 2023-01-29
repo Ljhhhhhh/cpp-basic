@@ -1,48 +1,41 @@
-//
-// Created by Administrator on 2023/1/11.
-//
 #include<iostream>
+
 using namespace std;
-#include "workerManger.h"
+
+#include "speechManager.h"
 
 int main() {
-  WorkerManager wm;
+  srand((unsigned int) time(NULL));
+  SpeechManager spm;
   int choice = 0;
-
   while (true) {
-    WorkerManager::showMenu();
+    spm.showMenu();
     cout << "请输入你的选择" << endl;
     cin >> choice;
 
+    for (map<int, Speaker>::iterator it = spm.speaker.begin(); it != spm.speaker.end(); it++) {
+      cout << "选手编号：" << it->first
+           << " 姓名： " << it->second.name
+           << " 成绩： " << it->second.score[0] << endl;
+    }
     switch (choice) {
-      case 0:
-        wm.exitSystem();
+      case 1:  //开始比赛
+        spm.startSpeech();
         break;
-      case 1:
-        wm.addEmp();
+      case 2:  //查看记录
+        spm.showRecord();
         break;
-      case 2:
-        wm.showEmpInfo();
+      case 3:  //清空记录
+        spm.clearRecord();
         break;
-      case 3:
-        wm.deleteEmp();
-        break;
-      case 4:
-        wm.updateEmp();
-        break;
-      case 5:
-        wm.findEmp();
-        break;
-      case 6:
-        wm.sortEmp();
-        break;
-      case 7:
-        wm.clearFile();
+      case 0:  //退出系统
+        spm.exitSystem();
         break;
       default:
-        system("cls");
+        system("cls"); //清屏
         break;
     }
   }
+  system("pause");
   return 0;
 }
