@@ -9,7 +9,7 @@
 #include <vector>
 #include "worker.h"
 #include "employee.h"
-#include "manager.h"
+#include "manager_bak.h"
 #include "boss.h"
 
 #define  FILENAME "empFile.txt"

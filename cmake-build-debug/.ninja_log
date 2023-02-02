@@ -1,6 +1,7 @@
 # ninja log v5
-17	456	6966664657202025	CMakeFiles/cpp_learn.dir/main.cpp.obj	6daae5c3852a2b9b
-31	398	6966626335991244	CMakeFiles/cpp_learn.dir/speaker.cpp.obj	2c5d79588d649af5
-2	749	6966664660335853	CMakeFiles/cpp_learn.dir/speechManager.cpp.obj	79632480ee9656a2
-750	1150	6966664663735156	cpp_learn.exe	72caa650d8c8675b
-0	309	6966746003098704	build.ninja	56bcc858b1aece38
+3	406	6967491226817421	CMakeFiles/cpp_learn.dir/main.cpp.obj	6daae5c3852a2b9b
+407	873	6967491231253393	cpp_learn.exe	e68c18426600b3e
+0	276	6970257782090912	build.ninja	56bcc858b1aece38
+3	414	6967465230594905	CMakeFiles/cpp_learn.dir/student.cpp.obj	ac098c684d95ca22
+53	466	6967465231133106	CMakeFiles/cpp_learn.dir/teacher.cpp.obj	e5e20cf9aa209f29
+36	445	6967465230724464	CMakeFiles/cpp_learn.dir/manager.cpp.obj	54c6d35e9b11e90b

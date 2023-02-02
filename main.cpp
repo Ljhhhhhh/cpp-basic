@@ -1,41 +1,34 @@
-#include<iostream>
+#include <iostream>
+#include <fstream>
+#include "globalFile.h"
 
 using namespace std;
 
-#include "speechManager.h"
-
 int main() {
-  srand((unsigned int) time(NULL));
-  SpeechManager spm;
-  int choice = 0;
-  while (true) {
-    spm.showMenu();
-    cout << "请输入你的选择" << endl;
-    cin >> choice;
 
-    for (map<int, Speaker>::iterator it = spm.speaker.begin(); it != spm.speaker.end(); it++) {
-      cout << "选手编号：" << it->first
-           << " 姓名： " << it->second.name
-           << " 成绩： " << it->second.score[0] << endl;
-    }
-    switch (choice) {
-      case 1:  //开始比赛
-        spm.startSpeech();
-        break;
-      case 2:  //查看记录
-        spm.showRecord();
-        break;
-      case 3:  //清空记录
-        spm.clearRecord();
-        break;
-      case 0:  //退出系统
-        spm.exitSystem();
-        break;
-      default:
-        system("cls"); //清屏
-        break;
-    }
+  ifstream ifs;
+  ifs.open(ORDER_FILE, ios::in);
+
+  if (!ifs.is_open())
+  {
+    cout << "文件不存在" << endl;
+    ifs.close();
+    return 0;
   }
-  system("pause");
+
+  string date;    // 日期
+  string interval;//时间段
+  string stuId;   //学生编号
+  string stuName; //学生姓名
+  string roomId;  //机房编号
+  string status;  //预约状态
+
+
+  while (ifs >> date && ifs >> interval && ifs
+    >> stuId && ifs >> stuName && ifs >> roomId && ifs >> status) {
+    cout << date << "===" << stuName << endl;
+  }
+
+
   return 0;
 }

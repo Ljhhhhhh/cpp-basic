@@ -1,22 +1,31 @@
-//
-// Created by Administrator on 2023/1/11.
-//
-
 #pragma once
-
 #include<iostream>
-
 using namespace std;
+#include "identity.h"
 
-#include "worker.h"
-
-class Manager : public Worker {
+class Manager :public Identity
+{
 public:
-    Manager(int id, string name, int deptId);
 
-    virtual void showInfo();
+  //默认构造
+  Manager();
 
-    virtual string getDeptName();
+  //有参构造  管理员姓名，密码
+  Manager(string name, string pwd);
 
-    void updateDept(int deptId);
+  //选择菜单
+  virtual void menu();
+
+  //添加账号
+  void addPerson();
+
+  //查看账号
+  void showPerson();
+
+  //查看机房信息
+  void showComputer();
+
+  //清空预约记录
+  void cleanFile();
+
 };
